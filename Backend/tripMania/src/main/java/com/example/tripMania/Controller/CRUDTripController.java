@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 // RequestMapping annotation is used to map web requests onto specific handler classes or handler methods.
 @RequestMapping("/trip")
-public class TripController {
+public class CRUDTripController {
 
     // Autowired annotation is used to auto-wire bean on the setter method, constructor or a field.
     @Autowired

@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6ae2233-21f4-4121-b528-7c4ea7e9f4a7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/BackendFile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontendFile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +41,12 @@
     "settings.editor.selected.configurable": "com.diffblue.cover.intellij"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alok\IdeaProjects\tripManiaWebSite\Backend" />
+      <recent name="C:\Users\Alok\IdeaProjects\tripManiaWebSite" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
