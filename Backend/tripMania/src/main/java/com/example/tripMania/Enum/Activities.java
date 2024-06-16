@@ -1,0 +1,20 @@
+package com.example.tripMania.Enum;
+
+public enum Activities {
+    TREKKING,
+    RIVER_RAFTING,
+    SCUBA_DIVING,
+    BUNGEE_JUMPING,
+    WILDLIFE_SAFARI,
+    LOCAL_ATTRACTION,
+    CULINARY_EXPERIENCE,
+    FESTIVAL,
+    SPA_TREATMENT,
+    BEACH_TIME,
+    YOGA_RETREATS,
+    SIGHTSEEING,
+    PHOTOGRAPHY,
+    ROCK_CLIMBING,
+    STARGAZING,
+    CAMPFIRE_COOKING
+}
