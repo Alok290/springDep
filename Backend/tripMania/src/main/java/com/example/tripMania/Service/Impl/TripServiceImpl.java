@@ -10,6 +10,8 @@ import com.example.tripMania.Transformation.Transformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -49,4 +51,49 @@ public class TripServiceImpl implements TripService {
     public ResponseDto updateTrip(RequestDto requestDto) throws Exception {
         return null;
     }
+
+    @Override
+    public List<ResponseDto> getTripList(String userId) throws Exception {
+
+
+        List<ResponseDto>  responseList =new ArrayList<>();
+
+        List<Trip> trips = tripRepository.findByUserId(userId);
+
+        if(trips.isEmpty()){
+            throw new RuntimeException("there is no value");
+        }
+
+        for( Trip trip:trips){
+            ResponseDto responseDto = Transformer.convertIntoResponseDto(trip);
+            responseList.add(responseDto);
+        }
+
+        return responseList;
+
+
+
+    }
+
+
+    @Override
+    public List<ResponseDto> findTipsUnderBudget(Double budget) throws Exception {
+
+        List<ResponseDto>  responseList =new ArrayList<>();
+        List<Trip> trips = tripRepository.findTripByPriceRange(budget-500.0, budget+1000.0);
+
+        if(trips.isEmpty()){
+            throw new RuntimeException("there is not any valid trip according to your budget");
+        }
+
+        for( Trip trip:trips){
+            ResponseDto responseDto = Transformer.convertIntoResponseDto(trip);
+            responseList.add(responseDto);
+        }
+
+        return responseList;
+
+
+    }
+
 }

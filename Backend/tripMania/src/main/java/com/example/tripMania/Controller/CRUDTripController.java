@@ -1,11 +1,14 @@
 package com.example.tripMania.Controller;
 
 import com.example.tripMania.Dtos.RequestDtos.RequestDto;
+import com.example.tripMania.Dtos.ResponseDto.ResponseDto;
 import com.example.tripMania.Service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 // RestController annotation is used to define a controller and to indicate that the return value of the methods should be bound to the web response body.
 @RestController
@@ -53,6 +56,19 @@ public class CRUDTripController {
         } catch (Exception e) {
             // In case of exceptions, returns a new ResponseEntity with the exception message and CONFLICT status code.
             return new ResponseEntity(e.getMessage(), HttpStatus.CONFLICT);
+        }
+    }
+
+
+    @GetMapping("/all-trip/{userId}")
+    public ResponseEntity getTripList(@PathVariable String userId) throws Exception{
+        try{
+            List<ResponseDto> responseList = tripService.getTripList(userId);
+            return new ResponseEntity(responseList,HttpStatus.OK);
+
+        }
+        catch (Exception e){
+            return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
         }
     }
 }
