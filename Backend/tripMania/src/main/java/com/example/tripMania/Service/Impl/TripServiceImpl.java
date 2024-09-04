@@ -9,6 +9,7 @@ import com.example.tripMania.Service.TripService;
 import com.example.tripMania.Transformation.Transformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.unit.DataUnit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +81,9 @@ public class TripServiceImpl implements TripService {
     public List<ResponseDto> findTipsUnderBudget(Double budget) throws Exception {
 
         List<ResponseDto>  responseList =new ArrayList<>();
-        List<Trip> trips = tripRepository.findTripByPriceRange(budget-500.0, budget+1000.0);
+        Double lowPrice = budget-500.0;
+        Double highPrice = budget+1000.0;
+        List<Trip> trips = tripRepository.findTripByPriceRange(lowPrice, highPrice);
 
         if(trips.isEmpty()){
             throw new RuntimeException("there is not any valid trip according to your budget");
